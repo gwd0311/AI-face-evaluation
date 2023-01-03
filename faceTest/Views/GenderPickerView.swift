@@ -20,6 +20,9 @@ struct GenderPickerView: View {
     private let cornerRadius = 27.5
     
     @Binding var isLeft: Bool
+    @Binding var image: UIImage?
+    @Binding var results: [Analysis]
+    @Binding var isEnd: Bool
     // 슬라이드 효과를 주기위해서 사용
     @Namespace var animation
     
@@ -42,6 +45,9 @@ struct GenderPickerView: View {
                 .onTapGesture {
                     withAnimation(.interactiveSpring(response: 0.5, dampingFraction: 0.6, blendDuration: 0.6)) {
                         isLeft = true
+                        self.image = nil
+                        self.isEnd = false
+                        self.results = []
                     }
                 }
             
@@ -62,6 +68,9 @@ struct GenderPickerView: View {
                 .onTapGesture {
                     withAnimation(.interactiveSpring(response: 0.5, dampingFraction: 0.6, blendDuration: 0.6)) {
                         isLeft = false
+                        self.image = nil
+                        self.isEnd = false
+                        self.results = []
                     }
                 }
         }
@@ -72,6 +81,6 @@ struct GenderPickerView: View {
 
 struct GenderPickerView_Previews: PreviewProvider {
     static var previews: some View {
-        GenderPickerView(leftTitle: "여성", rightTitle: "남성", isLeft: .constant(true))
+        GenderPickerView(leftTitle: "여성", rightTitle: "남성", isLeft: .constant(true), image: .constant(nil), results: .constant([]), isEnd: .constant(false))
     }
 }

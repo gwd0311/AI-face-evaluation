@@ -16,7 +16,7 @@ struct ImagePicker: UIViewControllerRepresentable {
     
     @Binding var image: UIImage?
     @Binding var isShown: Bool
-    @Binding var isProgress: Bool
+    @Binding var isEnd: Bool
     
     var sourceType: UIImagePickerController.SourceType = .camera
     
@@ -24,7 +24,7 @@ struct ImagePicker: UIViewControllerRepresentable {
     }
     
     func makeCoordinator() -> ImagePicker.Coordinator {
-        return ImagePickerCoordinator(image: $image, sourceType: sourceType, isShown: $isShown, isProgress: $isProgress)
+        return ImagePickerCoordinator(image: $image, sourceType: sourceType, isShown: $isShown, isEnd: $isEnd)
     }
     
     func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePicker>) -> ImagePicker.UIViewControllerType {
@@ -40,14 +40,14 @@ class ImagePickerCoordinator: NSObject, UINavigationControllerDelegate, UIImageP
     
     @Binding var image: UIImage?
     @Binding var isShown: Bool
-    @Binding var isProgress: Bool
+    @Binding var isEnd: Bool
 
     let sourceType: UIImagePickerController.SourceType
     
-    init(image: Binding<UIImage?>, sourceType: UIImagePickerController.SourceType, isShown: Binding<Bool>, isProgress: Binding<Bool>) {
+    init(image: Binding<UIImage?>, sourceType: UIImagePickerController.SourceType, isShown: Binding<Bool>, isEnd: Binding<Bool>) {
         _image = image
         _isShown = isShown
-        _isProgress = isProgress
+        _isEnd = isEnd
         self.sourceType = sourceType
     }
     
@@ -56,7 +56,7 @@ class ImagePickerCoordinator: NSObject, UINavigationControllerDelegate, UIImageP
         let uiImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         image = uiImage 
         isShown = false
-        isProgress = true
+        isEnd = true
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
