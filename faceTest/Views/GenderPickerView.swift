@@ -19,10 +19,7 @@ struct GenderPickerView: View {
     private let rightTitleColor = Color.gray
     private let cornerRadius = 27.5
     
-    @Binding var isLeft: Bool
-    @Binding var image: UIImage?
-    @Binding var results: [Analysis]
-    @Binding var isEnd: Bool
+    @EnvironmentObject private var model: Evaluation
     // 슬라이드 효과를 주기위해서 사용
     @Namespace var animation
     
@@ -34,20 +31,18 @@ struct GenderPickerView: View {
                 .padding(.horizontal, 45)
                 .background {
                     ZStack {
-                        if isLeft {
+                        if model.isWoman {
                             leftButtonColor
                                 .cornerRadius(cornerRadius)
                                 .matchedGeometryEffect(id: "TAB", in: animation)
                         }
                     }
                 }
-                .foregroundColor(isLeft ? leftTitleColor : rightTitleColor)
+                .foregroundColor(model.isWoman ? leftTitleColor : rightTitleColor)
                 .onTapGesture {
                     withAnimation(.interactiveSpring(response: 0.5, dampingFraction: 0.6, blendDuration: 0.6)) {
-                        isLeft = true
-                        self.image = nil
-                        self.isEnd = false
-                        self.results = []
+                        model.isWoman = true
+                        model.initializeAll()
                     }
                 }
             
@@ -57,20 +52,18 @@ struct GenderPickerView: View {
                 .padding(.horizontal, 45)
                 .background {
                     ZStack {
-                        if !isLeft {
+                        if !model.isWoman {
                             rightButtonColor
                                 .cornerRadius(cornerRadius)
                                 .matchedGeometryEffect(id: "TAB", in: animation)
                         }
                     }
                 }
-                .foregroundColor(!isLeft ? leftTitleColor : rightTitleColor)
+                .foregroundColor(!model.isWoman ? leftTitleColor : rightTitleColor)
                 .onTapGesture {
                     withAnimation(.interactiveSpring(response: 0.5, dampingFraction: 0.6, blendDuration: 0.6)) {
-                        isLeft = false
-                        self.image = nil
-                        self.isEnd = false
-                        self.results = []
+                        model.isWoman = false
+                        model.initializeAll()
                     }
                 }
         }
@@ -81,6 +74,6 @@ struct GenderPickerView: View {
 
 struct GenderPickerView_Previews: PreviewProvider {
     static var previews: some View {
-        GenderPickerView(leftTitle: "여성", rightTitle: "남성", isLeft: .constant(true), image: .constant(nil), results: .constant([]), isEnd: .constant(false))
+        GenderPickerView(leftTitle: "여성", rightTitle: "남성")
     }
 }

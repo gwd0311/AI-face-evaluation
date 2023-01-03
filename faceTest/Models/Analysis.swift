@@ -9,5 +9,5 @@ import Foundation
 
 struct Analysis {
     let label: String
-    let ratio: Float
+    let ratio: String
 }

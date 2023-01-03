@@ -79,7 +79,7 @@
 		B347D3C82962A01D00196FC5 /* faceTest */ = {
 			isa = PBXGroup;
 			children = (
-				B3B4A34E29645E2600F797F7 /* Main */,
+				B3B4A34E29645E2600F797F7 /* Services */,
 				B3B4A3492964384200F797F7 /* Models */,
 				B347D3EE2963D3D600196FC5 /* Utils */,
 				B347D3EA2963D3AA00196FC5 /* Views */,
@@ -133,12 +133,12 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		B3B4A34E29645E2600F797F7 /* Main */ = {
+		B3B4A34E29645E2600F797F7 /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				B3B4A34F29645E4C00F797F7 /* Evaluation.swift */,
 			);
-			path = Main;
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

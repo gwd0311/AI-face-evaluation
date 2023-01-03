@@ -9,12 +9,7 @@ import SwiftUI
 
 struct MainPage: View {
     
-    @State private var image: UIImage?
-    @State private var classificationLabel: String = ""
-    @State private var classificationRatio: String = ""
-    @State private var isLeft = true
-    @State private var results: [Analysis] = []
-    @State private var isClassificationEnd = false
+    @EnvironmentObject private var model: Evaluation
     
     let womanColor = Color(uiColor: UIColor(red: 0.366, green: 0.316, blue: 0.938, alpha: 1))
     let manColor = Color(uiColor: UIColor(red: 0.271, green: 0.427, blue: 0.976, alpha: 1))
@@ -29,17 +24,10 @@ struct MainPage: View {
                     .multilineTextAlignment(.center)
                     .padding(.bottom, 27)
                 
-                GenderPickerView(leftTitle: "여성", rightTitle: "남성", isLeft: $isLeft, image: $image, results: $results, isEnd: $isClassificationEnd)
+                GenderPickerView( leftTitle: "여성", rightTitle: "남성")
                     .padding(.bottom, 50)
                 
-                ImagePickerView(
-                    image: $image,
-                    classificationLabel: $classificationLabel,
-                    classificationRatio: $classificationRatio,
-                    isWoman: $isLeft,
-                    isEnd: $isClassificationEnd,
-                    results: $results
-                )
+                ImagePickerView()
 
                 Spacer()
                 
@@ -47,7 +35,7 @@ struct MainPage: View {
                 
                 Spacer().frame(height: 16)
                 
-                Text(results.first?.label ?? "")
+                Text(model.results.first?.label.description ?? "")
                 
                 Button {
                     // 네비게이션 타고 로딩 페이지로 이동
@@ -57,7 +45,7 @@ struct MainPage: View {
                         .fontWeight(.black)
                         .frame(maxWidth: .infinity, maxHeight: 56)
                 }
-                .buttonStyle(MainButtonStyle(color: isLeft ? womanColor : manColor))
+                .buttonStyle(MainButtonStyle(color: model.isWoman ? womanColor : manColor))
                 .padding(.horizontal, 24)
                 .padding(.bottom, 20)
                 

@@ -13,32 +13,28 @@ struct ImagePickerView: View {
     @State private var showPhotoOptions: Bool = false
     @State private var showSheet: Bool = false
     @State private var sourceType: UIImagePickerController.SourceType = .camera
-    
-    @Binding var image: UIImage?
-    @Binding var classificationLabel: String
-    @Binding var classificationRatio: String
-    @Binding var isWoman: Bool
-    @Binding var isEnd: Bool
-    @Binding var results: [Analysis]
+    @EnvironmentObject private var model: Evaluation
     
     private let boyClassifier = VisionClassifier(mlModel: BoyClassifier().model)
     private let girlClassifier = VisionClassifier(mlModel: GirlClassifier().model)
     
     private func classify() {
-        self.results = []
-        if let img = self.image {
+        model.initializeResults()
+
+        if let img = model.image {
             // perform image classification
             
-            let classifier = isWoman ? girlClassifier : boyClassifier
+            let classifier = model.isWoman ? girlClassifier : boyClassifier
             
             classifier?.classify(img) { results in
-                self.classificationLabel = results.first?.identifier ?? ""
-                self.classificationRatio = results.first?.confidence.description ?? ""
                 
                 for result in results {
-                    self.results.append(Analysis(label: result.identifier, ratio: result.confidence.binade))
+                    let analysis = Analysis(label: result.identifier, ratio: result.confidence.description)
+                    Task { @MainActor in
+                        model.appendResults(analysis: analysis)
+                        print(model.results)
+                    }
                 }
-                print(self.results)
             }
         }
     }
@@ -46,18 +42,18 @@ struct ImagePickerView: View {
     var body: some View {
         VStack {
             Button {
-                self.results = []
-                self.isEnd = false
+                model.initializeResults()
+                model.initializeEnd()
                 self.showSheet = true
             } label: {
-                Image(uiImage: image ?? (isWoman ? UIImage(named: "robot_woman")! : UIImage(named: "robot_man")!))
+                Image(uiImage: model.image ?? (model.isWoman ? UIImage(named: "robot_woman")! : UIImage(named: "robot_man")!))
                     .resizable()
                     .scaledToFill()
                     .frame(width: 216, height: 216)
                     .clipShape(RoundedRectangle(cornerRadius: 30))
                     .shadow(color: Color(uiColor: UIColor(red: 0.04, green: 0.035, blue: 0.271, alpha: 0.12)), radius: 20, x: 0, y: 0)
                     .overlay {
-                        if !isEnd {
+                        if !model.isClassificationEnd {
                             CameraButtonView()
                         } else {
                             CameraButtonView()
@@ -89,9 +85,9 @@ struct ImagePickerView: View {
         }
         .sheet(isPresented: $showPhotoOptions) {
             ImagePicker(
-                image: self.$image,
+                image: $model.image,
                 isShown: self.$showPhotoOptions,
-                isEnd: $isEnd,
+                isEnd: $model.isClassificationEnd,
                 sourceType: self.sourceType
             )
         }
@@ -100,6 +96,6 @@ struct ImagePickerView: View {
 
 struct ImagePickerView_Previews: PreviewProvider {
     static var previews: some View {
-        ImagePickerView(image: .constant(nil), classificationLabel: .constant("하하"), classificationRatio: .constant("10%"), isWoman: .constant(true), isEnd: .constant(false), results: .constant([]))
+        ImagePickerView()
     }
 }
