@@ -18,7 +18,7 @@ struct MainPage: View {
                 Text("인공지능 AI가 당신의 얼굴이 \n몇타취인지 분석합니다.")
                     .multilineTextAlignment(.center)
                 
-                
+                GenderPickerView(leftTitle: "여성", rightTitle: "남성")
                 
                 ImagePickerView(classificationLabel: $classificationLabel, classificationRatio: $classificationRatio)
             }

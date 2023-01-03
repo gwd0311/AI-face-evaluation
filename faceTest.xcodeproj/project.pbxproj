@@ -18,6 +18,7 @@
 		B347D3E729631B6300196FC5 /* BoyClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B347D3E629631B6300196FC5 /* BoyClassifier.mlmodel */; };
 		B347D3E929631B7F00196FC5 /* GirlClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B347D3E829631B7F00196FC5 /* GirlClassifier.mlmodel */; };
 		B347D3EC2963D3BF00196FC5 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B347D3EB2963D3BF00196FC5 /* ImagePickerView.swift */; };
+		B347D3F02963DFCC00196FC5 /* GenderPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B347D3EF2963DFCC00196FC5 /* GenderPickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		B347D3E629631B6300196FC5 /* BoyClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = BoyClassifier.mlmodel; sourceTree = "<group>"; };
 		B347D3E829631B7F00196FC5 /* GirlClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = GirlClassifier.mlmodel; sourceTree = "<group>"; };
 		B347D3EB2963D3BF00196FC5 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
+		B347D3EF2963DFCC00196FC5 /* GenderPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderPickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,11 +71,10 @@
 				B347D3EA2963D3AA00196FC5 /* Views */,
 				B347D3C92962A01D00196FC5 /* faceTestApp.swift */,
 				B347D3CB2962A01D00196FC5 /* ContentView.swift */,
-				B347D3DB2962B9B600196FC5 /* MainPage.swift */,
 				B347D3E02962CBD200196FC5 /* FruitClassifier 1.mlmodel */,
 				B347D3CD2962A01D00196FC5 /* Assets.xcassets */,
-				B347D3E629631B6300196FC5 /* BoyClassifier.mlmodel */,
 				B347D3E829631B7F00196FC5 /* GirlClassifier.mlmodel */,
+				B347D3E629631B6300196FC5 /* BoyClassifier.mlmodel */,
 				B347D3CF2962A01D00196FC5 /* Preview Content */,
 			);
 			path = faceTest;
@@ -91,6 +92,8 @@
 			isa = PBXGroup;
 			children = (
 				B347D3EB2963D3BF00196FC5 /* ImagePickerView.swift */,
+				B347D3DB2962B9B600196FC5 /* MainPage.swift */,
+				B347D3EF2963DFCC00196FC5 /* GenderPickerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 				B347D3CC2962A01D00196FC5 /* ContentView.swift in Sources */,
 				B347D3E929631B7F00196FC5 /* GirlClassifier.mlmodel in Sources */,
 				B347D3DE2962BADE00196FC5 /* ImagePicker.swift in Sources */,
+				B347D3F02963DFCC00196FC5 /* GenderPickerView.swift in Sources */,
 				B347D3E12962CBD200196FC5 /* FruitClassifier 1.mlmodel in Sources */,
 				B347D3EC2963D3BF00196FC5 /* ImagePickerView.swift in Sources */,
 				B347D3CA2962A01D00196FC5 /* faceTestApp.swift in Sources */,
@@ -320,6 +324,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -351,6 +356,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
