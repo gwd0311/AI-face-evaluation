@@ -19,7 +19,7 @@ struct GenderPickerView: View {
     private let rightTitleColor = Color.gray
     private let cornerRadius = 27.5
     
-    @State private var isLeft = true
+    @Binding var isLeft: Bool
     // 슬라이드 효과를 주기위해서 사용
     @Namespace var animation
     
@@ -72,6 +72,6 @@ struct GenderPickerView: View {
 
 struct GenderPickerView_Previews: PreviewProvider {
     static var previews: some View {
-        GenderPickerView(leftTitle: "여성", rightTitle: "남성")
+        GenderPickerView(leftTitle: "여성", rightTitle: "남성", isLeft: .constant(true))
     }
 }

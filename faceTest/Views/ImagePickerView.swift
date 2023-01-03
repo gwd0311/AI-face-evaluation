@@ -11,13 +11,15 @@ struct ImagePickerView: View {
     
     @State private var showPhotoOptions: Bool = false
     @State private var showSheet: Bool = false
+    @State private var isProgress: Bool = false
     @State private var isEnd: Bool = false
     @State private var image: UIImage?
     @State private var sourceType: UIImagePickerController.SourceType = .camera
     @Binding var classificationLabel: String
     @Binding var classificationRatio: String
+    @Binding var isWoman: Bool
     
-    private let classifier = VisionClassifier(mlModel: BoyClassifier().model)
+    private var classifier = VisionClassifier(mlModel: BoyClassifier().model)
     
     private func classify() {
         if let img = self.image {
@@ -32,8 +34,9 @@ struct ImagePickerView: View {
     
     private func delayAnalysis() async {
         try? await Task.sleep(nanoseconds: 2_000_000_000)
-        isEnd = false
+        isProgress = false
         classify()
+        isEnd = true
     }
     
     var body: some View {
@@ -41,7 +44,7 @@ struct ImagePickerView: View {
             Button {
                 self.showSheet = true
             } label: {
-                if isEnd || showPhotoOptions {
+                if isProgress {
                     ProgressView()
                         .frame(width: 300, height: 300)
                         .overlay {
@@ -53,11 +56,26 @@ struct ImagePickerView: View {
                             await delayAnalysis()
                         }
                 } else {
-                    Image(uiImage: (image ?? UIImage(systemName: "plus"))!)
+                    Image(uiImage: image ?? (isWoman ? UIImage(named: "robot_woman")! : UIImage(named: "robot_man")!))
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 300, height: 300)
-                        .clipShape(RoundedRectangle(cornerSize: CGSize(width: 250, height: 250)))
+                        .frame(width: 216, height: 216)
+                        .overlay {
+                            if !isEnd {
+                                Circle()
+                                    .strokeBorder(Color(uiColor: UIColor(red: 0.918, green: 0.918, blue: 0.925, alpha: 1)), lineWidth: 2)
+                                    .frame(width: 60, height: 60)
+                                    .background(.white)
+                                    .clipShape(Circle())
+                                    .padding(.top, 180)
+                                    .padding(.leading, 180)
+                                    .overlay {
+                                        Image("camera")
+                                            .padding(.top, 180)
+                                            .padding(.leading, 180)
+                                    }
+                            }
+                        }
                 }
                 
             }
@@ -80,7 +98,7 @@ struct ImagePickerView: View {
                     ]
                 )
             }
-            if !isEnd {
+            if !isProgress {
                 Text(classificationLabel)
                 Text(classificationRatio)
             }
@@ -89,7 +107,7 @@ struct ImagePickerView: View {
             ImagePicker(
                 image: self.$image,
                 isShown: self.$showPhotoOptions,
-                isEnd: $isEnd,
+                isProgress: $isProgress,
                 sourceType: self.sourceType
             )
         }
@@ -98,6 +116,6 @@ struct ImagePickerView: View {
 
 struct ImagePickerView_Previews: PreviewProvider {
     static var previews: some View {
-        ImagePickerView(classificationLabel: .constant("하하"), classificationRatio: .constant("10%"))
+        ImagePickerView(classificationLabel: .constant("하하"), classificationRatio: .constant("10%"), isWoman: .constant(true))
     }
 }

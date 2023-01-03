@@ -16,7 +16,7 @@ struct ImagePicker: UIViewControllerRepresentable {
     
     @Binding var image: UIImage?
     @Binding var isShown: Bool
-    @Binding var isEnd: Bool
+    @Binding var isProgress: Bool
     
     var sourceType: UIImagePickerController.SourceType = .camera
     
@@ -24,11 +24,10 @@ struct ImagePicker: UIViewControllerRepresentable {
     }
     
     func makeCoordinator() -> ImagePicker.Coordinator {
-        return ImagePickerCoordinator(image: $image, sourceType: sourceType, isShown: $isShown, isEnd: $isEnd)
+        return ImagePickerCoordinator(image: $image, sourceType: sourceType, isShown: $isShown, isProgress: $isProgress)
     }
     
     func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePicker>) -> ImagePicker.UIViewControllerType {
-        
         let picker = UIImagePickerController()
         picker.sourceType = sourceType
         picker.delegate = context.coordinator
@@ -41,14 +40,14 @@ class ImagePickerCoordinator: NSObject, UINavigationControllerDelegate, UIImageP
     
     @Binding var image: UIImage?
     @Binding var isShown: Bool
-    @Binding var isEnd: Bool
+    @Binding var isProgress: Bool
 
     let sourceType: UIImagePickerController.SourceType
     
-    init(image: Binding<UIImage?>, sourceType: UIImagePickerController.SourceType, isShown: Binding<Bool>, isEnd: Binding<Bool>) {
+    init(image: Binding<UIImage?>, sourceType: UIImagePickerController.SourceType, isShown: Binding<Bool>, isProgress: Binding<Bool>) {
         _image = image
         _isShown = isShown
-        _isEnd = isEnd
+        _isProgress = isProgress
         self.sourceType = sourceType
     }
     
@@ -57,7 +56,7 @@ class ImagePickerCoordinator: NSObject, UINavigationControllerDelegate, UIImageP
         let uiImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         image = uiImage 
         isShown = false
-        isEnd = true
+        isProgress = true
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
