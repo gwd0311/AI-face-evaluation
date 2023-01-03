@@ -19,13 +19,16 @@ struct ImagePickerView: View {
     @Binding var classificationRatio: String
     @Binding var isWoman: Bool
     
-    private var classifier = VisionClassifier(mlModel: BoyClassifier().model)
+    private let boyClassifier = VisionClassifier(mlModel: BoyClassifier().model)
+    private let girlClassifier = VisionClassifier(mlModel: GirlClassifier().model)
     
     private func classify() {
         if let img = self.image {
             // perform image classification
             
-            self.classifier?.classify(img) { results in
+            let classifier = isWoman ? girlClassifier : boyClassifier
+            
+            classifier?.classify(img) { results in
                 self.classificationLabel = results.first?.identifier ?? ""
                 self.classificationRatio = results.first?.confidence.description ?? ""
             }

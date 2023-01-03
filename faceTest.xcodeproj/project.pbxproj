@@ -19,6 +19,8 @@
 		B347D3E929631B7F00196FC5 /* GirlClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B347D3E829631B7F00196FC5 /* GirlClassifier.mlmodel */; };
 		B347D3EC2963D3BF00196FC5 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B347D3EB2963D3BF00196FC5 /* ImagePickerView.swift */; };
 		B347D3F02963DFCC00196FC5 /* GenderPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B347D3EF2963DFCC00196FC5 /* GenderPickerView.swift */; };
+		B3F1765D29641F2100CD2822 /* UploadDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F1765C29641F2100CD2822 /* UploadDescriptionView.swift */; };
+		B3F1766029641FB900CD2822 /* MainButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F1765F29641FB900CD2822 /* MainButtonStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		B347D3E829631B7F00196FC5 /* GirlClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = GirlClassifier.mlmodel; sourceTree = "<group>"; };
 		B347D3EB2963D3BF00196FC5 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		B347D3EF2963DFCC00196FC5 /* GenderPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderPickerView.swift; sourceTree = "<group>"; };
+		B3F1765C29641F2100CD2822 /* UploadDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadDescriptionView.swift; sourceTree = "<group>"; };
+		B3F1765F29641FB900CD2822 /* MainButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButtonStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,7 @@
 				B347D3EB2963D3BF00196FC5 /* ImagePickerView.swift */,
 				B347D3DB2962B9B600196FC5 /* MainPage.swift */,
 				B347D3EF2963DFCC00196FC5 /* GenderPickerView.swift */,
+				B3F1765C29641F2100CD2822 /* UploadDescriptionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -103,6 +108,7 @@
 			children = (
 				B347D3DD2962BADE00196FC5 /* ImagePicker.swift */,
 				B347D3E22962CBDB00196FC5 /* VisionClassifier.swift */,
+				B3F1765F29641FB900CD2822 /* MainButtonStyle.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -179,7 +185,9 @@
 			files = (
 				B347D3CC2962A01D00196FC5 /* ContentView.swift in Sources */,
 				B347D3E929631B7F00196FC5 /* GirlClassifier.mlmodel in Sources */,
+				B3F1766029641FB900CD2822 /* MainButtonStyle.swift in Sources */,
 				B347D3DE2962BADE00196FC5 /* ImagePicker.swift in Sources */,
+				B3F1765D29641F2100CD2822 /* UploadDescriptionView.swift in Sources */,
 				B347D3F02963DFCC00196FC5 /* GenderPickerView.swift in Sources */,
 				B347D3E12962CBD200196FC5 /* FruitClassifier 1.mlmodel in Sources */,
 				B347D3EC2963D3BF00196FC5 /* ImagePickerView.swift in Sources */,

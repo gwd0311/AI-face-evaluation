@@ -13,6 +13,9 @@ struct MainPage: View {
     @State private var classificationRatio: String = ""
     @State private var isLeft = true
     
+    let womanColor = Color(uiColor: UIColor(red: 0.366, green: 0.316, blue: 0.938, alpha: 1))
+    let manColor = Color(uiColor: UIColor(red: 0.271, green: 0.427, blue: 0.976, alpha: 1))
+    
     var body: some View {
         NavigationView {
             VStack(alignment: .center) {
@@ -34,9 +37,22 @@ struct MainPage: View {
 
                 Spacer()
                 
-                Text("업로드한 사진은 ")
-                    .font(.system(size: 14))
-                + Text("분석에만 이용") + Text("되며, ") + Text("저장하지 않습니다.")
+                UploadDescriptionView()
+                
+                Spacer().frame(height: 16)
+                
+                Button {
+                    print("dd")
+                } label: {
+                    Text("결과 분석")
+                        .font(.system(size: 18))
+                        .fontWeight(.black)
+                        .frame(maxWidth: .infinity, maxHeight: 56)
+                }
+                .buttonStyle(MainButtonStyle(color: isLeft ? womanColor : manColor))
+                .padding(.horizontal, 24)
+                .padding(.bottom, 20)
+                
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
