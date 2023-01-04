@@ -19,10 +19,16 @@
 		B347D3E929631B7F00196FC5 /* GirlClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B347D3E829631B7F00196FC5 /* GirlClassifier.mlmodel */; };
 		B347D3EC2963D3BF00196FC5 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B347D3EB2963D3BF00196FC5 /* ImagePickerView.swift */; };
 		B347D3F02963DFCC00196FC5 /* GenderPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B347D3EF2963DFCC00196FC5 /* GenderPickerView.swift */; };
-		B3B4A34829642E4900F797F7 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = B3B4A34729642E4900F797F7 /* loading.json */; };
 		B3B4A34B2964387900F797F7 /* Analysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B4A34A2964387900F797F7 /* Analysis.swift */; };
 		B3B4A34D296446C600F797F7 /* CameraButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B4A34C296446C600F797F7 /* CameraButtonView.swift */; };
 		B3B4A35029645E4C00F797F7 /* Evaluation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B4A34F29645E4C00F797F7 /* Evaluation.swift */; };
+		B3B4A354296473FB00F797F7 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B4A353296473FB00F797F7 /* LoadingView.swift */; };
+		B3B4A3572964742600F797F7 /* woman_loading.json in Resources */ = {isa = PBXBuildFile; fileRef = B3B4A3552964742600F797F7 /* woman_loading.json */; };
+		B3B4A3582964742600F797F7 /* man_loading.json in Resources */ = {isa = PBXBuildFile; fileRef = B3B4A3562964742600F797F7 /* man_loading.json */; };
+		B3B4A35B296474C500F797F7 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = B3B4A35A296474C500F797F7 /* Lottie */; };
+		B3B4A35D2964753200F797F7 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B4A35C2964753200F797F7 /* LottieView.swift */; };
+		B3B4A35F2965167C00F797F7 /* FaceDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B4A35E2965167C00F797F7 /* FaceDetector.swift */; };
+		B3B4A3622965270000F797F7 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B4A3612965270000F797F7 /* ResultView.swift */; };
 		B3F1765D29641F2100CD2822 /* UploadDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F1765C29641F2100CD2822 /* UploadDescriptionView.swift */; };
 		B3F1766029641FB900CD2822 /* MainButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F1765F29641FB900CD2822 /* MainButtonStyle.swift */; };
 /* End PBXBuildFile section */
@@ -41,10 +47,15 @@
 		B347D3E829631B7F00196FC5 /* GirlClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = GirlClassifier.mlmodel; sourceTree = "<group>"; };
 		B347D3EB2963D3BF00196FC5 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		B347D3EF2963DFCC00196FC5 /* GenderPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderPickerView.swift; sourceTree = "<group>"; };
-		B3B4A34729642E4900F797F7 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
 		B3B4A34A2964387900F797F7 /* Analysis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analysis.swift; sourceTree = "<group>"; };
 		B3B4A34C296446C600F797F7 /* CameraButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraButtonView.swift; sourceTree = "<group>"; };
 		B3B4A34F29645E4C00F797F7 /* Evaluation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Evaluation.swift; sourceTree = "<group>"; };
+		B3B4A353296473FB00F797F7 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		B3B4A3552964742600F797F7 /* woman_loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = woman_loading.json; sourceTree = "<group>"; };
+		B3B4A3562964742600F797F7 /* man_loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = man_loading.json; sourceTree = "<group>"; };
+		B3B4A35C2964753200F797F7 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		B3B4A35E2965167C00F797F7 /* FaceDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceDetector.swift; sourceTree = "<group>"; };
+		B3B4A3612965270000F797F7 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		B3F1765C29641F2100CD2822 /* UploadDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadDescriptionView.swift; sourceTree = "<group>"; };
 		B3F1765F29641FB900CD2822 /* MainButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButtonStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -54,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3B4A35B296474C500F797F7 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,7 +101,8 @@
 				B347D3CD2962A01D00196FC5 /* Assets.xcassets */,
 				B347D3E829631B7F00196FC5 /* GirlClassifier.mlmodel */,
 				B347D3E629631B6300196FC5 /* BoyClassifier.mlmodel */,
-				B3B4A34729642E4900F797F7 /* loading.json */,
+				B3B4A3562964742600F797F7 /* man_loading.json */,
+				B3B4A3552964742600F797F7 /* woman_loading.json */,
 				B347D3CF2962A01D00196FC5 /* Preview Content */,
 			);
 			path = faceTest;
@@ -106,11 +119,9 @@
 		B347D3EA2963D3AA00196FC5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B347D3EB2963D3BF00196FC5 /* ImagePickerView.swift */,
-				B347D3DB2962B9B600196FC5 /* MainPage.swift */,
-				B347D3EF2963DFCC00196FC5 /* GenderPickerView.swift */,
-				B3F1765C29641F2100CD2822 /* UploadDescriptionView.swift */,
-				B3B4A34C296446C600F797F7 /* CameraButtonView.swift */,
+				B3B4A360296526DE00F797F7 /* ResultScene */,
+				B3B4A352296473E300F797F7 /* LoadingScene */,
+				B3B4A351296473D000F797F7 /* MainScene */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -121,6 +132,7 @@
 				B347D3DD2962BADE00196FC5 /* ImagePicker.swift */,
 				B347D3E22962CBDB00196FC5 /* VisionClassifier.swift */,
 				B3F1765F29641FB900CD2822 /* MainButtonStyle.swift */,
+				B3B4A35E2965167C00F797F7 /* FaceDetector.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -141,6 +153,35 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		B3B4A351296473D000F797F7 /* MainScene */ = {
+			isa = PBXGroup;
+			children = (
+				B347D3EB2963D3BF00196FC5 /* ImagePickerView.swift */,
+				B347D3DB2962B9B600196FC5 /* MainPage.swift */,
+				B347D3EF2963DFCC00196FC5 /* GenderPickerView.swift */,
+				B3F1765C29641F2100CD2822 /* UploadDescriptionView.swift */,
+				B3B4A34C296446C600F797F7 /* CameraButtonView.swift */,
+			);
+			path = MainScene;
+			sourceTree = "<group>";
+		};
+		B3B4A352296473E300F797F7 /* LoadingScene */ = {
+			isa = PBXGroup;
+			children = (
+				B3B4A353296473FB00F797F7 /* LoadingView.swift */,
+				B3B4A35C2964753200F797F7 /* LottieView.swift */,
+			);
+			path = LoadingScene;
+			sourceTree = "<group>";
+		};
+		B3B4A360296526DE00F797F7 /* ResultScene */ = {
+			isa = PBXGroup;
+			children = (
+				B3B4A3612965270000F797F7 /* ResultView.swift */,
+			);
+			path = ResultScene;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -157,6 +198,9 @@
 			dependencies = (
 			);
 			name = faceTest;
+			packageProductDependencies = (
+				B3B4A35A296474C500F797F7 /* Lottie */,
+			);
 			productName = faceTest;
 			productReference = B347D3C62962A01D00196FC5 /* faceTest.app */;
 			productType = "com.apple.product-type.application";
@@ -185,6 +229,9 @@
 				Base,
 			);
 			mainGroup = B347D3BD2962A01D00196FC5;
+			packageReferences = (
+				B3B4A359296474C500F797F7 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = B347D3C72962A01D00196FC5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -200,8 +247,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B347D3D12962A01D00196FC5 /* Preview Assets.xcassets in Resources */,
+				B3B4A3582964742600F797F7 /* man_loading.json in Resources */,
 				B347D3CE2962A01D00196FC5 /* Assets.xcassets in Resources */,
-				B3B4A34829642E4900F797F7 /* loading.json in Resources */,
+				B3B4A3572964742600F797F7 /* woman_loading.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,10 +261,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B347D3CC2962A01D00196FC5 /* ContentView.swift in Sources */,
+				B3B4A35D2964753200F797F7 /* LottieView.swift in Sources */,
 				B3B4A34B2964387900F797F7 /* Analysis.swift in Sources */,
+				B3B4A3622965270000F797F7 /* ResultView.swift in Sources */,
 				B347D3E929631B7F00196FC5 /* GirlClassifier.mlmodel in Sources */,
 				B3F1766029641FB900CD2822 /* MainButtonStyle.swift in Sources */,
 				B347D3DE2962BADE00196FC5 /* ImagePicker.swift in Sources */,
+				B3B4A354296473FB00F797F7 /* LoadingView.swift in Sources */,
 				B3B4A34D296446C600F797F7 /* CameraButtonView.swift in Sources */,
 				B3F1765D29641F2100CD2822 /* UploadDescriptionView.swift in Sources */,
 				B347D3F02963DFCC00196FC5 /* GenderPickerView.swift in Sources */,
@@ -226,6 +277,7 @@
 				B347D3CA2962A01D00196FC5 /* faceTestApp.swift in Sources */,
 				B347D3E32962CBDB00196FC5 /* VisionClassifier.swift in Sources */,
 				B347D3DC2962B9B600196FC5 /* MainPage.swift in Sources */,
+				B3B4A35F2965167C00F797F7 /* FaceDetector.swift in Sources */,
 				B347D3E729631B6300196FC5 /* BoyClassifier.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,6 +485,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B3B4A359296474C500F797F7 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B3B4A35A296474C500F797F7 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B3B4A359296474C500F797F7 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B347D3BE2962A01D00196FC5 /* Project object */;
 }

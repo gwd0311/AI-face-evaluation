@@ -12,14 +12,45 @@ struct ImagePickerView: View {
     
     @State private var showPhotoOptions: Bool = false
     @State private var showSheet: Bool = false
+    @State private var showAlert: Bool = false
+    @State private var alertMessage: String = ""
     @State private var sourceType: UIImagePickerController.SourceType = .camera
     @EnvironmentObject private var model: Evaluation
     
     private let boyClassifier = VisionClassifier(mlModel: BoyClassifier().model)
     private let girlClassifier = VisionClassifier(mlModel: GirlClassifier().model)
     
+    private func detectFace() {
+        Task { @MainActor in
+            model.initializeResults()
+        }
+        
+        if let img = model.image {
+            let detector = FaceDetector()
+            detector.detect(img) { results in
+                if results.count == 1 {
+                    self.classify()
+                } else if results.count > 1 {
+                    self.alertMessage = "사람 한명만 해주세요"
+                    self.showAlert = true
+                    Task { @MainActor in
+                        model.initializeAll()
+                    }
+                } else {
+                    self.alertMessage = "눈코입이 다보이는 사람 사진으로 해주세요"
+                    self.showAlert = true
+                    Task { @MainActor in
+                        model.initializeAll()
+                    }
+                }
+            }
+        }
+    }
+    
     private func classify() {
-        model.initializeResults()
+        Task { @MainActor in
+            model.initializeResults()
+        }
 
         if let img = model.image {
             // perform image classification
@@ -58,7 +89,7 @@ struct ImagePickerView: View {
                         } else {
                             CameraButtonView()
                                 .onAppear {
-                                    classify()
+                                    detectFace()
                                 }
                         }
                     }
@@ -91,11 +122,18 @@ struct ImagePickerView: View {
                 sourceType: self.sourceType
             )
         }
+        .alert("인식 실패", isPresented: $showAlert) {
+            Text("")
+        } message: {
+            Text(alertMessage)
+        }
+
     }
 }
 
 struct ImagePickerView_Previews: PreviewProvider {
     static var previews: some View {
         ImagePickerView()
+            .environmentObject(Evaluation())
     }
 }

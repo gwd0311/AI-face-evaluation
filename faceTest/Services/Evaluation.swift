@@ -11,8 +11,9 @@ import UIKit
 @MainActor
 class Evaluation: ObservableObject {
     
-    @Published var isWoman: Bool = false
+    @Published var isWoman: Bool = true
     @Published var isClassificationEnd: Bool = false
+    @Published var isLoading: Bool = false
     @Published var image: UIImage?
     @Published var results: [Analysis] = []
     
