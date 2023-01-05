@@ -28,7 +28,10 @@ struct LoadingView: View {
                 LottieView(jsonName: "man_loading")
                     .frame(width: 300, height: 300)
             }
-            Image("loading_txt")
+            Text("Loading..")
+                .font(.custom("JalnanOTF", size: 24))
+                .fontWeight(.bold)
+                .foregroundColor(.white)
                 .padding(.top, 200)
         }
         .task {

@@ -7,11 +7,11 @@
 
 import SwiftUI
 import Vision
+import PhotosUI
 
 struct ImagePickerView: View {
     
-    @State private var showPhotoOptions: Bool = false
-    @State private var showSheet: Bool = false
+    @State private var showPhotoPicker: Bool = false
     @State private var showAlert: Bool = false
     @State private var alertMessage: String = ""
     @State private var sourceType: UIImagePickerController.SourceType = .camera
@@ -21,11 +21,13 @@ struct ImagePickerView: View {
     private let girlClassifier = VisionClassifier(mlModel: GirlClassifier().model)
     
     private func detectFace() {
+        
         Task { @MainActor in
             model.initializeResults()
         }
         
         if let img = model.image {
+            print(img)
             let detector = FaceDetector()
             detector.detect(img) { results in
                 if results.count == 1 {
@@ -44,6 +46,9 @@ struct ImagePickerView: View {
                     }
                 }
             }
+        } else {
+            alertMessage = "사진을 인식하는데 실패하였습니다. 다른 사진으로 해주세요"
+            showAlert = true
         }
     }
     
@@ -75,13 +80,13 @@ struct ImagePickerView: View {
             Button {
                 model.initializeResults()
                 model.initializeEnd()
-                self.showSheet = true
+                self.showPhotoPicker = true
             } label: {
                 Image(uiImage: model.image ?? (model.isWoman ? UIImage(named: "robot_woman")! : UIImage(named: "robot_man")!))
                     .resizable()
                     .scaledToFill()
                     .frame(width: 216, height: 216)
-                    .clipShape(RoundedRectangle(cornerRadius: 30))
+                    .clipShape(RoundedRectangle(cornerRadius: 20))
                     .shadow(color: Color(uiColor: UIColor(red: 0.04, green: 0.035, blue: 0.271, alpha: 0.12)), radius: 20, x: 0, y: 0)
                     .overlay {
                         if !model.isClassificationEnd {
@@ -94,32 +99,12 @@ struct ImagePickerView: View {
                         }
                     }
             }
-            .actionSheet(isPresented: $showSheet) {
-                ActionSheet(
-                    title: Text("사진 선택"),
-                    message: Text("사진을 선택해주세요."),
-                    buttons: [
-                        .default(Text("사진에서 가져오기")) {
-                            // open photo library
-                            self.showPhotoOptions = true
-                            self.sourceType = .photoLibrary
-                        },
-                        .default(Text("카메라로 촬영해서 가져오기")) {
-                            // open camera
-                            self.showPhotoOptions = true
-                            self.sourceType = .camera
-                        },
-                        .cancel()
-                    ]
-                )
-            }
         }
-        .sheet(isPresented: $showPhotoOptions) {
-            ImagePicker(
+        .sheet(isPresented: $showPhotoPicker) {
+            PhotoPicker(
                 image: $model.image,
-                isShown: self.$showPhotoOptions,
-                isEnd: $model.isClassificationEnd,
-                sourceType: self.sourceType
+                isPresented: self.$showPhotoPicker,
+                isEnd: $model.isClassificationEnd
             )
         }
         .alert("인식 실패", isPresented: $showAlert) {

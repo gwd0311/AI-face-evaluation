@@ -12,8 +12,6 @@
 		B347D3CE2962A01D00196FC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B347D3CD2962A01D00196FC5 /* Assets.xcassets */; };
 		B347D3D12962A01D00196FC5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B347D3D02962A01D00196FC5 /* Preview Assets.xcassets */; };
 		B347D3DC2962B9B600196FC5 /* MainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B347D3DB2962B9B600196FC5 /* MainPage.swift */; };
-		B347D3DE2962BADE00196FC5 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B347D3DD2962BADE00196FC5 /* ImagePicker.swift */; };
-		B347D3E12962CBD200196FC5 /* FruitClassifier 1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B347D3E02962CBD200196FC5 /* FruitClassifier 1.mlmodel */; };
 		B347D3E32962CBDB00196FC5 /* VisionClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B347D3E22962CBDB00196FC5 /* VisionClassifier.swift */; };
 		B347D3E729631B6300196FC5 /* BoyClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B347D3E629631B6300196FC5 /* BoyClassifier.mlmodel */; };
 		B347D3E929631B7F00196FC5 /* GirlClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B347D3E829631B7F00196FC5 /* GirlClassifier.mlmodel */; };
@@ -29,6 +27,19 @@
 		B3B4A35D2964753200F797F7 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B4A35C2964753200F797F7 /* LottieView.swift */; };
 		B3B4A35F2965167C00F797F7 /* FaceDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B4A35E2965167C00F797F7 /* FaceDetector.swift */; };
 		B3B4A3622965270000F797F7 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B4A3612965270000F797F7 /* ResultView.swift */; };
+		B3B4A36429653B4100F797F7 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B4A36329653B4100F797F7 /* ChartView.swift */; };
+		B3B4A367296557B400F797F7 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B4A366296557B400F797F7 /* String+.swift */; };
+		B3B4A36C296570C900F797F7 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B4A36B296570C900F797F7 /* SettingsView.swift */; };
+		B3B4A36F2965737C00F797F7 /* Jalnan.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3B4A36E2965737C00F797F7 /* Jalnan.ttf */; };
+		B3B4A3712965742700F797F7 /* JalnanOTF.otf in Resources */ = {isa = PBXBuildFile; fileRef = B3B4A3702965742700F797F7 /* JalnanOTF.otf */; };
+		B3B4A3732965763E00F797F7 /* StrokeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B4A3722965763E00F797F7 /* StrokeTextView.swift */; };
+		B3B4A3752965831E00F797F7 /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B4A3742965831E00F797F7 /* ShareSheet.swift */; };
+		B3B4A38029659AEB00F797F7 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B4A37F29659AEB00F797F7 /* SplashView.swift */; };
+		B3B4A3842965E23B00F797F7 /* splash.json in Resources */ = {isa = PBXBuildFile; fileRef = B3B4A3832965E23B00F797F7 /* splash.json */; };
+		B3B4A38A29668B6300F797F7 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B4A38929668B6300F797F7 /* PhotoPicker.swift */; };
+		B3B4A38F2966ACBE00F797F7 /* ScreenshotSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = B3B4A38E2966ACBE00F797F7 /* ScreenshotSwiftUI */; };
+		B3B4A3932966CE4F00F797F7 /* AIDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B4A3922966CE4E00F797F7 /* AIDescriptionView.swift */; };
+		B3B4A3952966CFD600F797F7 /* Text+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B4A3942966CFD600F797F7 /* Text+.swift */; };
 		B3F1765D29641F2100CD2822 /* UploadDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F1765C29641F2100CD2822 /* UploadDescriptionView.swift */; };
 		B3F1766029641FB900CD2822 /* MainButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F1765F29641FB900CD2822 /* MainButtonStyle.swift */; };
 /* End PBXBuildFile section */
@@ -40,8 +51,6 @@
 		B347D3CD2962A01D00196FC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B347D3D02962A01D00196FC5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B347D3DB2962B9B600196FC5 /* MainPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPage.swift; sourceTree = "<group>"; };
-		B347D3DD2962BADE00196FC5 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
-		B347D3E02962CBD200196FC5 /* FruitClassifier 1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "FruitClassifier 1.mlmodel"; sourceTree = "<group>"; };
 		B347D3E22962CBDB00196FC5 /* VisionClassifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisionClassifier.swift; sourceTree = "<group>"; };
 		B347D3E629631B6300196FC5 /* BoyClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = BoyClassifier.mlmodel; sourceTree = "<group>"; };
 		B347D3E829631B7F00196FC5 /* GirlClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = GirlClassifier.mlmodel; sourceTree = "<group>"; };
@@ -56,6 +65,18 @@
 		B3B4A35C2964753200F797F7 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		B3B4A35E2965167C00F797F7 /* FaceDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceDetector.swift; sourceTree = "<group>"; };
 		B3B4A3612965270000F797F7 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		B3B4A36329653B4100F797F7 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		B3B4A366296557B400F797F7 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		B3B4A36B296570C900F797F7 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		B3B4A36E2965737C00F797F7 /* Jalnan.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Jalnan.ttf; sourceTree = "<group>"; };
+		B3B4A3702965742700F797F7 /* JalnanOTF.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = JalnanOTF.otf; sourceTree = "<group>"; };
+		B3B4A3722965763E00F797F7 /* StrokeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokeTextView.swift; sourceTree = "<group>"; };
+		B3B4A3742965831E00F797F7 /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
+		B3B4A37F29659AEB00F797F7 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		B3B4A3832965E23B00F797F7 /* splash.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = splash.json; sourceTree = "<group>"; };
+		B3B4A38929668B6300F797F7 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
+		B3B4A3922966CE4E00F797F7 /* AIDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIDescriptionView.swift; sourceTree = "<group>"; };
+		B3B4A3942966CFD600F797F7 /* Text+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+.swift"; sourceTree = "<group>"; };
 		B3F1765C29641F2100CD2822 /* UploadDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadDescriptionView.swift; sourceTree = "<group>"; };
 		B3F1765F29641FB900CD2822 /* MainButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButtonStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -65,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3B4A38F2966ACBE00F797F7 /* ScreenshotSwiftUI in Frameworks */,
 				B3B4A35B296474C500F797F7 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -91,18 +113,20 @@
 		B347D3C82962A01D00196FC5 /* faceTest */ = {
 			isa = PBXGroup;
 			children = (
+				B3B4A36D2965734300F797F7 /* fonts */,
+				B3B4A365296557A600F797F7 /* Extensions */,
 				B3B4A34E29645E2600F797F7 /* Services */,
 				B3B4A3492964384200F797F7 /* Models */,
 				B347D3EE2963D3D600196FC5 /* Utils */,
 				B347D3EA2963D3AA00196FC5 /* Views */,
 				B347D3C92962A01D00196FC5 /* faceTestApp.swift */,
 				B347D3CB2962A01D00196FC5 /* ContentView.swift */,
-				B347D3E02962CBD200196FC5 /* FruitClassifier 1.mlmodel */,
 				B347D3CD2962A01D00196FC5 /* Assets.xcassets */,
 				B347D3E829631B7F00196FC5 /* GirlClassifier.mlmodel */,
 				B347D3E629631B6300196FC5 /* BoyClassifier.mlmodel */,
 				B3B4A3562964742600F797F7 /* man_loading.json */,
 				B3B4A3552964742600F797F7 /* woman_loading.json */,
+				B3B4A3832965E23B00F797F7 /* splash.json */,
 				B347D3CF2962A01D00196FC5 /* Preview Content */,
 			);
 			path = faceTest;
@@ -119,6 +143,8 @@
 		B347D3EA2963D3AA00196FC5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B3B4A37E29659ADB00F797F7 /* SplashScene */,
+				B3B4A368296570A100F797F7 /* SettingScene */,
 				B3B4A360296526DE00F797F7 /* ResultScene */,
 				B3B4A352296473E300F797F7 /* LoadingScene */,
 				B3B4A351296473D000F797F7 /* MainScene */,
@@ -129,7 +155,7 @@
 		B347D3EE2963D3D600196FC5 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				B347D3DD2962BADE00196FC5 /* ImagePicker.swift */,
+				B3B4A38929668B6300F797F7 /* PhotoPicker.swift */,
 				B347D3E22962CBDB00196FC5 /* VisionClassifier.swift */,
 				B3F1765F29641FB900CD2822 /* MainButtonStyle.swift */,
 				B3B4A35E2965167C00F797F7 /* FaceDetector.swift */,
@@ -161,6 +187,7 @@
 				B347D3EF2963DFCC00196FC5 /* GenderPickerView.swift */,
 				B3F1765C29641F2100CD2822 /* UploadDescriptionView.swift */,
 				B3B4A34C296446C600F797F7 /* CameraButtonView.swift */,
+				B3B4A3722965763E00F797F7 /* StrokeTextView.swift */,
 			);
 			path = MainScene;
 			sourceTree = "<group>";
@@ -178,8 +205,45 @@
 			isa = PBXGroup;
 			children = (
 				B3B4A3612965270000F797F7 /* ResultView.swift */,
+				B3B4A36329653B4100F797F7 /* ChartView.swift */,
+				B3B4A3742965831E00F797F7 /* ShareSheet.swift */,
 			);
 			path = ResultScene;
+			sourceTree = "<group>";
+		};
+		B3B4A365296557A600F797F7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B3B4A366296557B400F797F7 /* String+.swift */,
+				B3B4A3942966CFD600F797F7 /* Text+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B3B4A368296570A100F797F7 /* SettingScene */ = {
+			isa = PBXGroup;
+			children = (
+				B3B4A36B296570C900F797F7 /* SettingsView.swift */,
+				B3B4A3922966CE4E00F797F7 /* AIDescriptionView.swift */,
+			);
+			path = SettingScene;
+			sourceTree = "<group>";
+		};
+		B3B4A36D2965734300F797F7 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B3B4A36E2965737C00F797F7 /* Jalnan.ttf */,
+				B3B4A3702965742700F797F7 /* JalnanOTF.otf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
+		B3B4A37E29659ADB00F797F7 /* SplashScene */ = {
+			isa = PBXGroup;
+			children = (
+				B3B4A37F29659AEB00F797F7 /* SplashView.swift */,
+			);
+			path = SplashScene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +264,7 @@
 			name = faceTest;
 			packageProductDependencies = (
 				B3B4A35A296474C500F797F7 /* Lottie */,
+				B3B4A38E2966ACBE00F797F7 /* ScreenshotSwiftUI */,
 			);
 			productName = faceTest;
 			productReference = B347D3C62962A01D00196FC5 /* faceTest.app */;
@@ -231,6 +296,7 @@
 			mainGroup = B347D3BD2962A01D00196FC5;
 			packageReferences = (
 				B3B4A359296474C500F797F7 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				B3B4A38D2966ACBE00F797F7 /* XCRemoteSwiftPackageReference "ScreenshotSwiftUI" */,
 			);
 			productRefGroup = B347D3C72962A01D00196FC5 /* Products */;
 			projectDirPath = "";
@@ -246,9 +312,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3B4A36F2965737C00F797F7 /* Jalnan.ttf in Resources */,
 				B347D3D12962A01D00196FC5 /* Preview Assets.xcassets in Resources */,
 				B3B4A3582964742600F797F7 /* man_loading.json in Resources */,
+				B3B4A3712965742700F797F7 /* JalnanOTF.otf in Resources */,
 				B347D3CE2962A01D00196FC5 /* Assets.xcassets in Resources */,
+				B3B4A3842965E23B00F797F7 /* splash.json in Resources */,
 				B3B4A3572964742600F797F7 /* woman_loading.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,24 +329,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3B4A3952966CFD600F797F7 /* Text+.swift in Sources */,
+				B3B4A36C296570C900F797F7 /* SettingsView.swift in Sources */,
 				B347D3CC2962A01D00196FC5 /* ContentView.swift in Sources */,
 				B3B4A35D2964753200F797F7 /* LottieView.swift in Sources */,
+				B3B4A367296557B400F797F7 /* String+.swift in Sources */,
 				B3B4A34B2964387900F797F7 /* Analysis.swift in Sources */,
 				B3B4A3622965270000F797F7 /* ResultView.swift in Sources */,
 				B347D3E929631B7F00196FC5 /* GirlClassifier.mlmodel in Sources */,
 				B3F1766029641FB900CD2822 /* MainButtonStyle.swift in Sources */,
-				B347D3DE2962BADE00196FC5 /* ImagePicker.swift in Sources */,
+				B3B4A3932966CE4F00F797F7 /* AIDescriptionView.swift in Sources */,
+				B3B4A3732965763E00F797F7 /* StrokeTextView.swift in Sources */,
 				B3B4A354296473FB00F797F7 /* LoadingView.swift in Sources */,
 				B3B4A34D296446C600F797F7 /* CameraButtonView.swift in Sources */,
 				B3F1765D29641F2100CD2822 /* UploadDescriptionView.swift in Sources */,
+				B3B4A36429653B4100F797F7 /* ChartView.swift in Sources */,
 				B347D3F02963DFCC00196FC5 /* GenderPickerView.swift in Sources */,
-				B347D3E12962CBD200196FC5 /* FruitClassifier 1.mlmodel in Sources */,
 				B3B4A35029645E4C00F797F7 /* Evaluation.swift in Sources */,
 				B347D3EC2963D3BF00196FC5 /* ImagePickerView.swift in Sources */,
+				B3B4A38029659AEB00F797F7 /* SplashView.swift in Sources */,
 				B347D3CA2962A01D00196FC5 /* faceTestApp.swift in Sources */,
 				B347D3E32962CBDB00196FC5 /* VisionClassifier.swift in Sources */,
 				B347D3DC2962B9B600196FC5 /* MainPage.swift in Sources */,
+				B3B4A3752965831E00F797F7 /* ShareSheet.swift in Sources */,
 				B3B4A35F2965167C00F797F7 /* FaceDetector.swift in Sources */,
+				B3B4A38A29668B6300F797F7 /* PhotoPicker.swift in Sources */,
 				B347D3E729631B6300196FC5 /* BoyClassifier.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,7 +411,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -389,7 +465,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -412,10 +488,12 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = faceTest/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "카메라에 접근할 수 있도록 권한 설정을 허용해주세요";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "사진을 저장할 수 있도록 권한 설정을 허용해주세요";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -425,9 +503,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jerry.faceTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -444,10 +525,12 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = faceTest/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "카메라에 접근할 수 있도록 권한 설정을 허용해주세요";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "사진을 저장할 수 있도록 권한 설정을 허용해주세요";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -457,9 +540,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jerry.faceTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -495,6 +581,14 @@
 				minimumVersion = 4.0.0;
 			};
 		};
+		B3B4A38D2966ACBE00F797F7 /* XCRemoteSwiftPackageReference "ScreenshotSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/gualtierofrigerio/ScreenshotSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -502,6 +596,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B3B4A359296474C500F797F7 /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
+		};
+		B3B4A38E2966ACBE00F797F7 /* ScreenshotSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B3B4A38D2966ACBE00F797F7 /* XCRemoteSwiftPackageReference "ScreenshotSwiftUI" */;
+			productName = ScreenshotSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

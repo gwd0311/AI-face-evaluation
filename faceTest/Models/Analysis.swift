@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Analysis {
+struct Analysis: Identifiable {
+    let id = UUID().uuidString
     let label: String
     let ratio: String
 }

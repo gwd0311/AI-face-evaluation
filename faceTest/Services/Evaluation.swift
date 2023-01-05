@@ -15,7 +15,16 @@ class Evaluation: ObservableObject {
     @Published var isClassificationEnd: Bool = false
     @Published var isLoading: Bool = false
     @Published var image: UIImage?
+    @Published var screenshotImage: UIImage?
     @Published var results: [Analysis] = []
+    
+    func updateScreenshotImage(image: UIImage) {
+        screenshotImage = image
+    }
+    
+    func sortResults() {
+        self.results = results.sorted { $0.ratio.toPercent > $1.ratio.toPercent }
+    }
     
     func appendResults(analysis: Analysis) {
         results.append(analysis)
@@ -37,5 +46,6 @@ class Evaluation: ObservableObject {
         results = []
         isClassificationEnd = false
         image = nil
+        screenshotImage = nil
     }
 }

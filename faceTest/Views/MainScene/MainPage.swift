@@ -15,6 +15,7 @@ struct MainPage: View {
     
     let womanColor = Color(uiColor: UIColor(red: 0.366, green: 0.316, blue: 0.938, alpha: 1))
     let manColor = Color(uiColor: UIColor(red: 0.271, green: 0.427, blue: 0.976, alpha: 1))
+    let logoColor = Color(uiColor: UIColor(red: 0.238, green: 0.241, blue: 0.258, alpha: 1))
     
     var body: some View {
         if model.isLoading {
@@ -40,12 +41,11 @@ struct MainPage: View {
                     
                     Spacer().frame(height: 16)
                     
-                    Text(model.results.first?.label.description ?? "")
-                    
                     Button {
                         if model.image != nil {
                             withAnimation {
                                 model.isLoading = true
+                                model.sortResults()
                             }
                         } else {
                             self.alertMessage = "이미지를 넣고 시도하세요"
@@ -57,6 +57,7 @@ struct MainPage: View {
                             .font(.system(size: 18))
                             .fontWeight(.black)
                             .frame(maxWidth: .infinity, maxHeight: 56)
+                            .frame(height: 56)
                     }
                     .buttonStyle(MainButtonStyle(color: model.isWoman ? womanColor : manColor))
                     .padding(.horizontal, 24)
@@ -64,10 +65,19 @@ struct MainPage: View {
                 }
                 .toolbar {
                     ToolbarItem(placement: .navigationBarLeading) {
-                        Text("인공지능 얼굴평가")
+                        HStack(spacing: 5) {
+                            StrokeTextView(text: "인공지능", width: 1, color: logoColor)
+                                .foregroundColor(.white)
+                                .font(.custom("JalnanOTF", size: 20))
+                            Text("얼굴평가")
+                                .font(.custom("JalnanOTF", size: 20))
+                                .foregroundColor(logoColor)
+                                .fontWeight(.black)
+                        }
+                        .padding(.top, 5)
                     }
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        Image(systemName: "gear")
+                        Image("settings")
                     }
                 }
                 .alert("결과 분석 실패", isPresented: $showAlert) {
@@ -75,7 +85,6 @@ struct MainPage: View {
                 } message: {
                     Text(alertMessage)
                 }
-
             }
         }
     }

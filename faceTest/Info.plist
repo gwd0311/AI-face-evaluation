@@ -4,6 +4,11 @@
 <dict>
 	<key>Information Property List</key>
 	<string></string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>JalnanOTF.otf</string>
+		<string>Jalnan.ttf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

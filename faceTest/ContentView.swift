@@ -8,13 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var isLoading = true
+    
     var body: some View {
-        MainPage()
+        if isLoading {
+            SplashView(isLoading: $isLoading)
+        } else {
+            MainPage()
+        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(Evaluation())
     }
 }
