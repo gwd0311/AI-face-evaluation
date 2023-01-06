@@ -16,6 +16,7 @@ struct ImagePickerView: View {
     @State private var alertMessage: String = ""
     @State private var sourceType: UIImagePickerController.SourceType = .camera
     @EnvironmentObject private var model: Evaluation
+    @EnvironmentObject private var language: LanguageManager
     
     private let boyClassifier = VisionClassifier(mlModel: BoyClassifier().model)
     private let girlClassifier = VisionClassifier(mlModel: GirlClassifier().model)
@@ -33,13 +34,13 @@ struct ImagePickerView: View {
                 if results.count == 1 {
                     self.classify()
                 } else if results.count > 1 {
-                    self.alertMessage = "사람 한명만 해주세요"
+                    self.alertMessage = language.onlyOnePeopleShouldAppear
                     self.showAlert = true
                     Task { @MainActor in
                         model.initializeAll()
                     }
                 } else {
-                    self.alertMessage = "눈코입이 다보이는 사람 사진으로 해주세요"
+                    self.alertMessage = language.shouldAppearFace
                     self.showAlert = true
                     Task { @MainActor in
                         model.initializeAll()
@@ -47,7 +48,7 @@ struct ImagePickerView: View {
                 }
             }
         } else {
-            alertMessage = "사진을 인식하는데 실패하였습니다. 다른 사진으로 해주세요"
+            alertMessage = language.photoRecogError
             showAlert = true
         }
     }
@@ -107,7 +108,7 @@ struct ImagePickerView: View {
                 isEnd: $model.isClassificationEnd
             )
         }
-        .alert("인식 실패", isPresented: $showAlert) {
+        .alert(language.recogErrorTitle, isPresented: $showAlert) {
             Text("")
         } message: {
             Text(alertMessage)

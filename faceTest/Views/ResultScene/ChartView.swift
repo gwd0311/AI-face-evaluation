@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ChartView: View {
     
+    @EnvironmentObject var language: LanguageManager
+    
     let title: String
     let ratio: String
     let color: Color
@@ -16,7 +18,7 @@ struct ChartView: View {
     var body: some View {
         VStack {
             HStack {
-                Text(title)
+                Text(language.translateChartResult(message: title))
                     .fontWeight(.semibold)
                     .font(.system(size: 14))
                 Spacer()
@@ -43,5 +45,6 @@ struct ChartView: View {
 struct ChartView_Previews: PreviewProvider {
     static var previews: some View {
         ChartView(title: "씹상타취부위", ratio: "0.84".toInteger, color: .blue)
+            .environmentObject(LanguageManager())
     }
 }

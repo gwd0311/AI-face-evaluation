@@ -7,27 +7,24 @@
 
 import SwiftUI
 import ScreenshotSwiftUI
+import GoogleMobileAds
 
 struct ResultView: View {
     
     @State private var showShareSheet = false
     @State private var showAlert = false
+    @State private var showInterstitalAd = false
     @State private var alertMessage = ""
+    @State var interstitial = InterstitialAd()
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject private var model: Evaluation
+    @EnvironmentObject private var language: LanguageManager
+    
+    private let adUnitId = "ca-app-pub-6301096399153807/9209160669"
     let logoColor = Color(uiColor: UIColor(red: 0.238, green: 0.241, blue: 0.258, alpha: 1))
     
-    func shareSheet(url: String) {
-        let url = URL(string: url)
-        let activityView = UIActivityViewController(activityItems: [url ?? "dd"], applicationActivities: nil)
-
-        let allScenes = UIApplication.shared.connectedScenes
-        let scene = allScenes.first { $0.activationState == .foregroundActive }
-
-        if let windowScene = scene as? UIWindowScene {
-            windowScene.keyWindow?.rootViewController?.present(activityView, animated: true, completion: nil)
-        }
-
+    private func delay() async {
+        try? await Task.sleep(nanoseconds: 0_500_000_000)
     }
     
     var body: some View {
@@ -37,6 +34,12 @@ struct ResultView: View {
                 Color(uiColor: UIColor(red: 0.967, green: 0.884, blue: 0.592, alpha: 1))
                     .ignoresSafeArea()
                 VStack {
+                    Button {
+                        interstitial.showAd()
+                    } label: {
+                        Text("test")
+                    }
+
                     Spacer().frame(height: 24)
                     HStack {
                         Image("l_leaf")
@@ -58,16 +61,7 @@ struct ResultView: View {
                             .ignoresSafeArea()
                         ScrollView {
                             Spacer().frame(height: 24)
-                            Text("당신은 ")
-                                .fontWeight(.bold)
-                                .font(.system(size: 20))
-                            + Text(model.results.first?.label.toTitleLabel ?? "레이블 오류")
-                                .fontWeight(.bold)
-                                .font(.system(size: 20))
-                                .foregroundColor(model.results.first?.label.toColor ?? .black)
-                            + Text("입니다!")
-                                .fontWeight(.bold)
-                                .font(.system(size: 20))
+                            ResultMessageView()
                             Spacer().frame(height: 16)
                             Divider()
                                 .padding(.horizontal, 24)
@@ -83,9 +77,10 @@ struct ResultView: View {
                                 Button {
                                     model.isLoading = false
                                     model.initializeAll()
+//                                    self.showInterstitalAd.toggle()
                                     dismiss()
                                 } label: {
-                                    Text("다른사진으로 재시도")
+                                    Text(language.anotherImage)
                                         .fontWeight(.black)
                                         .font(.system(size: 18))
                                         .frame(maxWidth: .infinity, maxHeight: 56)
@@ -110,17 +105,27 @@ struct ResultView: View {
                         }
                     }
                 }
+//                .presentInterstitialAd(isPresented: $showInterstitalAd, adUnitId: adUnitId)
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     HStack(spacing: 5) {
-                        StrokeTextView(text: "인공지능", width: 1, color: logoColor)
-                            .foregroundColor(.white)
-                            .font(.custom("JalnanOTF", size: 20))
-                        Text("얼굴평가")
-                            .font(.custom("JalnanOTF", size: 20))
-                            .foregroundColor(logoColor)
-                            .fontWeight(.black)
+                        if language.language == .japanese || language.language == .chinese {
+                            Text(language.ai)
+                                .foregroundColor(.black)
+                                .font(.system(size: 20, weight: .black))
+                            Text(language.facetest)
+                                .font(.system(size: 20, weight: .black))
+                                .foregroundColor(logoColor)
+                        } else {
+                            StrokeTextView(text: language.ai, width: 1, color: logoColor)
+                                .foregroundColor(.white)
+                                .font(.custom("JalnanOTF", size: 20))
+                            Text(language.facetest)
+                                .font(.custom("JalnanOTF", size: 20))
+                                .foregroundColor(logoColor)
+                                .fontWeight(.black)
+                        }
                     }
                     .padding(.top, 5)
                 }
@@ -128,10 +133,10 @@ struct ResultView: View {
                     Button {
                         if model.screenshotImage != nil {
                             UIImageWriteToSavedPhotosAlbum(model.screenshotImage!, nil, nil, nil)
-                            alertMessage = "스크린샷이 저장되었습니다."
+                            alertMessage = language.screenshotCompleted
                             showAlert.toggle()
                         } else {
-                            alertMessage = "스크린샷이 저장 중 오류가 발생하였습니다."
+                            alertMessage = language.screenshotError
                             showAlert.toggle()
                         }
                     } label: {
@@ -139,25 +144,32 @@ struct ResultView: View {
                     }
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Image("settings")
+                    NavigationLink {
+                        SettingsView()
+                    } label: {
+                        Image("settings")
+                    }
                 }
             }
         }
         .screenshotMaker { screenshotMaker in
-            if model.screenshotImage == nil {
-                let uiImage = screenshotMaker.screenshot()
-                model.updateScreenshotImage(image: uiImage!)
+            Task {
+                await delay()
+                if model.screenshotImage == nil && model.image != nil {
+                    let uiImage = screenshotMaker.screenshot()
+                    model.updateScreenshotImage(image: uiImage!)
+                }
             }
         }
         .sheet(isPresented: $showShareSheet) {
-            ShareSheet(itemsToShare: [model.screenshotImage!])
+            ShareSheet(itemsToShare: [model.screenshotImage ?? "공유 오류 발생"])
+                .environmentObject(model)
         }
         .alert("", isPresented: $showAlert) {
             Text("")
         } message: {
             Text(alertMessage)
         }
-
     }
 }
 
@@ -165,5 +177,7 @@ struct ResultView_Previews: PreviewProvider {
     static var previews: some View {
         ResultView()
             .environmentObject(Evaluation())
+            .environmentObject(LanguageManager())
     }
 }
+

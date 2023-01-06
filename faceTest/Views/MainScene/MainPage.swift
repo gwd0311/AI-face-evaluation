@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import GoogleMobileAds
 
 struct MainPage: View {
     
     @State private var showAlert: Bool = false
     @State private var alertMessage: String = ""
     @EnvironmentObject private var model: Evaluation
+    @EnvironmentObject private var language: LanguageManager
     
     let womanColor = Color(uiColor: UIColor(red: 0.366, green: 0.316, blue: 0.938, alpha: 1))
     let manColor = Color(uiColor: UIColor(red: 0.271, green: 0.427, blue: 0.976, alpha: 1))
@@ -24,19 +26,21 @@ struct MainPage: View {
             NavigationView {
                 VStack(alignment: .center) {
                     Spacer().frame(height: 32)
-                    Text("인공지능 AI가 당신의 얼굴이 \n몇타취인지 분석합니다.")
-                        .font(.system(size: 20))
-                        .fontWeight(.bold)
+                    Text(language.mainDescription)
+                        .frame(maxWidth: 250)
+                        .font(.system(size: 20, weight: .bold))
                         .multilineTextAlignment(.center)
                         .padding(.bottom, 27)
                     
-                    GenderPickerView( leftTitle: "여성", rightTitle: "남성")
+                    GenderPickerView( leftTitle: language.woman, rightTitle: language.man)
                         .padding(.bottom, 50)
                     
                     ImagePickerView()
 
                     Spacer()
                     
+                    BannerAdView()
+
                     UploadDescriptionView()
                     
                     Spacer().frame(height: 16)
@@ -48,12 +52,12 @@ struct MainPage: View {
                                 model.sortResults()
                             }
                         } else {
-                            self.alertMessage = "이미지를 넣고 시도하세요"
+                            self.alertMessage = language.tryAgainWithImage
                             self.showAlert = true
                         }
                         
                     } label: {
-                        Text("결과 분석")
+                        Text(language.resultsAnalysis)
                             .font(.system(size: 18))
                             .fontWeight(.black)
                             .frame(maxWidth: .infinity, maxHeight: 56)
@@ -66,21 +70,34 @@ struct MainPage: View {
                 .toolbar {
                     ToolbarItem(placement: .navigationBarLeading) {
                         HStack(spacing: 5) {
-                            StrokeTextView(text: "인공지능", width: 1, color: logoColor)
-                                .foregroundColor(.white)
-                                .font(.custom("JalnanOTF", size: 20))
-                            Text("얼굴평가")
-                                .font(.custom("JalnanOTF", size: 20))
-                                .foregroundColor(logoColor)
-                                .fontWeight(.black)
+                            if language.language == .japanese || language.language == .chinese {
+                                Text(language.ai)
+                                    .foregroundColor(.black)
+                                    .font(.system(size: 20, weight: .black))
+                                Text(language.facetest)
+                                    .font(.system(size: 20, weight: .black))
+                                    .foregroundColor(logoColor)
+                            } else {
+                                StrokeTextView(text: language.ai, width: 1, color: logoColor)
+                                    .foregroundColor(.white)
+                                    .font(.custom("JalnanOTF", size: 20))
+                                Text(language.facetest)
+                                    .font(.custom("JalnanOTF", size: 20))
+                                    .foregroundColor(logoColor)
+                                    .fontWeight(.black)
+                            }
                         }
                         .padding(.top, 5)
                     }
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        Image("settings")
+                        NavigationLink {
+                            SettingsView()
+                        } label: {
+                            Image("settings")
+                        }
                     }
                 }
-                .alert("결과 분석 실패", isPresented: $showAlert) {
+                .alert(language.resultAnalysisError, isPresented: $showAlert) {
                     Text("")
                 } message: {
                     Text(alertMessage)
@@ -94,5 +111,6 @@ struct MainPage_Previews: PreviewProvider {
     static var previews: some View {
         MainPage()
             .environmentObject(Evaluation())
+            .environmentObject(LanguageManager())
     }
 }
