@@ -8,10 +8,13 @@
 import SwiftUI
 import GoogleMobileAds
 
+// test: ca-app-pub-3940256099942544/2934735716
+// oper: ca-app-pub-6301096399153807/8177497632
+
 struct BannerAdView: UIViewControllerRepresentable {
     let adUnitID: String
 
-    init(adUnitID: String = "ca-app-pub-3940256099942544/2934735716") {
+    init(adUnitID: String = "ca-app-pub-6301096399153807/8177497632") {
         self.adUnitID = adUnitID
     }
 

@@ -15,12 +15,10 @@ struct ResultView: View {
     @State private var showAlert = false
     @State private var showInterstitalAd = false
     @State private var alertMessage = ""
-    @State var interstitial = InterstitialAd()
-    @Environment(\.dismiss) var dismiss
     @EnvironmentObject private var model: Evaluation
     @EnvironmentObject private var language: LanguageManager
+    @EnvironmentObject private var ad: InterstitialAd
     
-    private let adUnitId = "ca-app-pub-6301096399153807/9209160669"
     let logoColor = Color(uiColor: UIColor(red: 0.238, green: 0.241, blue: 0.258, alpha: 1))
     
     private func delay() async {
@@ -28,18 +26,11 @@ struct ResultView: View {
     }
     
     var body: some View {
-        
         NavigationView {
             ZStack {
                 Color(uiColor: UIColor(red: 0.967, green: 0.884, blue: 0.592, alpha: 1))
                     .ignoresSafeArea()
                 VStack {
-                    Button {
-                        interstitial.showAd()
-                    } label: {
-                        Text("test")
-                    }
-
                     Spacer().frame(height: 24)
                     HStack {
                         Image("l_leaf")
@@ -75,10 +66,7 @@ struct ResultView: View {
                             Spacer()
                             HStack {
                                 Button {
-                                    model.isLoading = false
-                                    model.initializeAll()
-//                                    self.showInterstitalAd.toggle()
-                                    dismiss()
+                                    ad.showAd()
                                 } label: {
                                     Text(language.anotherImage)
                                         .fontWeight(.black)
@@ -105,7 +93,6 @@ struct ResultView: View {
                         }
                     }
                 }
-//                .presentInterstitialAd(isPresented: $showInterstitalAd, adUnitId: adUnitId)
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
@@ -170,6 +157,12 @@ struct ResultView: View {
         } message: {
             Text(alertMessage)
         }
+        .onWillDisappear {
+            if ad.isDismiss {
+                model.isLoading = false
+                model.initializeAll()
+            }
+        }
     }
 }
 
@@ -178,6 +171,7 @@ struct ResultView_Previews: PreviewProvider {
         ResultView()
             .environmentObject(Evaluation())
             .environmentObject(LanguageManager())
+            .environmentObject(InterstitialAd())
     }
 }
 

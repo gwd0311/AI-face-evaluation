@@ -44,9 +44,11 @@
 		B3FA9D3529671DA500E565A2 /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FA9D3429671DA500E565A2 /* LanguageManager.swift */; };
 		B3FA9D532968052300E565A2 /* ResultMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FA9D522968052300E565A2 /* ResultMessageView.swift */; };
 		B3FA9D562968241300E565A2 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = B3FA9D552968241300E565A2 /* GoogleMobileAds */; };
-		B3FA9D60296859AF00E565A2 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FA9D5F296859AF00E565A2 /* BannerView.swift */; };
-		B3FA9D6229685B1E00E565A2 /* InterstitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FA9D6129685B1E00E565A2 /* InterstitialView.swift */; };
+		B3FA9D60296859AF00E565A2 /* BannerAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FA9D5F296859AF00E565A2 /* BannerAdView.swift */; };
+		B3FA9D6229685B1E00E565A2 /* InterstitialAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FA9D6129685B1E00E565A2 /* InterstitialAd.swift */; };
 		B3FA9D6D29687B2E00E565A2 /* splash.json in Resources */ = {isa = PBXBuildFile; fileRef = B3FA9D6C29687B2E00E565A2 /* splash.json */; };
+		B3FA9D6F296C2F2800E565A2 /* UIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FA9D6E296C2F2800E565A2 /* UIApplication+.swift */; };
+		B3FA9D71296C47FC00E565A2 /* WillDisappearHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FA9D70296C47FC00E565A2 /* WillDisappearHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,10 +87,12 @@
 		B3FA9D322966E14900E565A2 /* LanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageView.swift; sourceTree = "<group>"; };
 		B3FA9D3429671DA500E565A2 /* LanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
 		B3FA9D522968052300E565A2 /* ResultMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultMessageView.swift; sourceTree = "<group>"; };
-		B3FA9D5F296859AF00E565A2 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
-		B3FA9D6129685B1E00E565A2 /* InterstitialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialView.swift; sourceTree = "<group>"; };
+		B3FA9D5F296859AF00E565A2 /* BannerAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerAdView.swift; sourceTree = "<group>"; };
+		B3FA9D6129685B1E00E565A2 /* InterstitialAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialAd.swift; sourceTree = "<group>"; };
 		B3FA9D6529686AE000E565A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B3FA9D6C29687B2E00E565A2 /* splash.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = splash.json; sourceTree = "<group>"; };
+		B3FA9D6E296C2F2800E565A2 /* UIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+.swift"; sourceTree = "<group>"; };
+		B3FA9D70296C47FC00E565A2 /* WillDisappearHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WillDisappearHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +176,7 @@
 				B347D3E22962CBDB00196FC5 /* VisionClassifier.swift */,
 				B3F1765F29641FB900CD2822 /* MainButtonStyle.swift */,
 				B3B4A35E2965167C00F797F7 /* FaceDetector.swift */,
+				B3FA9D70296C47FC00E565A2 /* WillDisappearHandler.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -189,6 +194,7 @@
 			children = (
 				B3B4A34F29645E4C00F797F7 /* Evaluation.swift */,
 				B3FA9D3429671DA500E565A2 /* LanguageManager.swift */,
+				B3FA9D6129685B1E00E565A2 /* InterstitialAd.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -230,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				B3B4A366296557B400F797F7 /* String+.swift */,
+				B3FA9D6E296C2F2800E565A2 /* UIApplication+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -264,8 +271,7 @@
 		B3FA9D57296827B300E565A2 /* AdView */ = {
 			isa = PBXGroup;
 			children = (
-				B3FA9D5F296859AF00E565A2 /* BannerView.swift */,
-				B3FA9D6129685B1E00E565A2 /* InterstitialView.swift */,
+				B3FA9D5F296859AF00E565A2 /* BannerAdView.swift */,
 			);
 			path = AdView;
 			sourceTree = "<group>";
@@ -359,6 +365,7 @@
 				B347D3CC2962A01D00196FC5 /* ContentView.swift in Sources */,
 				B3FA9D332966E14900E565A2 /* LanguageView.swift in Sources */,
 				B3B4A35D2964753200F797F7 /* LottieView.swift in Sources */,
+				B3FA9D71296C47FC00E565A2 /* WillDisappearHandler.swift in Sources */,
 				B3B4A367296557B400F797F7 /* String+.swift in Sources */,
 				B3FA9D532968052300E565A2 /* ResultMessageView.swift in Sources */,
 				B3B4A34B2964387900F797F7 /* Analysis.swift in Sources */,
@@ -374,10 +381,11 @@
 				B347D3F02963DFCC00196FC5 /* GenderPickerView.swift in Sources */,
 				B3B4A35029645E4C00F797F7 /* Evaluation.swift in Sources */,
 				B347D3EC2963D3BF00196FC5 /* ImagePickerView.swift in Sources */,
-				B3FA9D60296859AF00E565A2 /* BannerView.swift in Sources */,
+				B3FA9D60296859AF00E565A2 /* BannerAdView.swift in Sources */,
 				B3B4A38029659AEB00F797F7 /* SplashView.swift in Sources */,
 				B347D3CA2962A01D00196FC5 /* faceTestApp.swift in Sources */,
-				B3FA9D6229685B1E00E565A2 /* InterstitialView.swift in Sources */,
+				B3FA9D6229685B1E00E565A2 /* InterstitialAd.swift in Sources */,
+				B3FA9D6F296C2F2800E565A2 /* UIApplication+.swift in Sources */,
 				B347D3E32962CBDB00196FC5 /* VisionClassifier.swift in Sources */,
 				B3FA9D3529671DA500E565A2 /* LanguageManager.swift in Sources */,
 				B347D3DC2962B9B600196FC5 /* MainPage.swift in Sources */,
