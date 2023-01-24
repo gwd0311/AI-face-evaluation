@@ -18,7 +18,7 @@ class LanguageManager: ObservableObject {
     var mainDescription: String {
         switch language {
         case .korean:
-            return "인공지능 AI가 당신의 얼굴이 몇타취인지 분석합니다."
+            return "인공지능 AI가 당신의 얼굴이 어떤 스타일인지 분석합니다."
         }
     }
     

@@ -44,7 +44,7 @@ struct ChartView: View {
 
 struct ChartView_Previews: PreviewProvider {
     static var previews: some View {
-        ChartView(title: "씹상타취부위", ratio: "0.84".toInteger, color: .blue)
+        ChartView(title: "잘생긴 부위", ratio: "0.84".toInteger, color: .blue)
             .environmentObject(LanguageManager())
     }
 }
