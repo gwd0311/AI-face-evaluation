@@ -40,7 +40,6 @@
 		B3B4A3932966CE4F00F797F7 /* AIDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B4A3922966CE4E00F797F7 /* AIDescriptionView.swift */; };
 		B3F1765D29641F2100CD2822 /* UploadDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F1765C29641F2100CD2822 /* UploadDescriptionView.swift */; };
 		B3F1766029641FB900CD2822 /* MainButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F1765F29641FB900CD2822 /* MainButtonStyle.swift */; };
-		B3FA9D332966E14900E565A2 /* LanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FA9D322966E14900E565A2 /* LanguageView.swift */; };
 		B3FA9D3529671DA500E565A2 /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FA9D3429671DA500E565A2 /* LanguageManager.swift */; };
 		B3FA9D532968052300E565A2 /* ResultMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FA9D522968052300E565A2 /* ResultMessageView.swift */; };
 		B3FA9D562968241300E565A2 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = B3FA9D552968241300E565A2 /* GoogleMobileAds */; };
@@ -84,7 +83,6 @@
 		B3B4A3922966CE4E00F797F7 /* AIDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIDescriptionView.swift; sourceTree = "<group>"; };
 		B3F1765C29641F2100CD2822 /* UploadDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadDescriptionView.swift; sourceTree = "<group>"; };
 		B3F1765F29641FB900CD2822 /* MainButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButtonStyle.swift; sourceTree = "<group>"; };
-		B3FA9D322966E14900E565A2 /* LanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageView.swift; sourceTree = "<group>"; };
 		B3FA9D3429671DA500E565A2 /* LanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
 		B3FA9D522968052300E565A2 /* ResultMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultMessageView.swift; sourceTree = "<group>"; };
 		B3FA9D5F296859AF00E565A2 /* BannerAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerAdView.swift; sourceTree = "<group>"; };
@@ -245,7 +243,6 @@
 			isa = PBXGroup;
 			children = (
 				B3B4A36B296570C900F797F7 /* SettingsView.swift */,
-				B3FA9D322966E14900E565A2 /* LanguageView.swift */,
 				B3B4A3922966CE4E00F797F7 /* AIDescriptionView.swift */,
 			);
 			path = SettingScene;
@@ -363,7 +360,6 @@
 			files = (
 				B3B4A36C296570C900F797F7 /* SettingsView.swift in Sources */,
 				B347D3CC2962A01D00196FC5 /* ContentView.swift in Sources */,
-				B3FA9D332966E14900E565A2 /* LanguageView.swift in Sources */,
 				B3B4A35D2964753200F797F7 /* LottieView.swift in Sources */,
 				B3FA9D71296C47FC00E565A2 /* WillDisappearHandler.swift in Sources */,
 				B3B4A367296557B400F797F7 /* String+.swift in Sources */,
@@ -529,7 +525,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSCameraUsageDescription = "카메라에 접근할 수 있도록 권한 설정을 허용해주세요";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "사진을 저장할 수 있도록 권한 설정을 허용해주세요";
-				INFOPLIST_KEY_NSUserTrackingUsageDescription = "please permit it";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "개인에게 최적화된 광고를 제공하기 위해 사용자의 광고 활동 정보를 수집합니다. 거절하실 경우 앱 이용에 제한이 있을 수 있습니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -568,7 +564,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSCameraUsageDescription = "카메라에 접근할 수 있도록 권한 설정을 허용해주세요";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "사진을 저장할 수 있도록 권한 설정을 허용해주세요";
-				INFOPLIST_KEY_NSUserTrackingUsageDescription = "please permit it";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "개인에게 최적화된 광고를 제공하기 위해 사용자의 광고 활동 정보를 수집합니다. 거절하실 경우 앱 이용에 제한이 있을 수 있습니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;

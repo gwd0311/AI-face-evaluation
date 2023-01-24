@@ -21,16 +21,18 @@ extension String {
     
     var toChartLabel: String? {
         switch self {
-        case "veryHansome", "veryPretty":
-            return "씹상타취 부위"
+        case "veryHansome":
+            return "잘생긴 부위"
+        case "veryPretty":
+            return "예쁜 부위"
         case "hansome", "pretty":
-            return "상타취 부위"
+            return "귀여운 부위"
         case "normal":
-            return "평타취 부위"
+            return "지적인 부위"
         case "ugly":
-            return "하타취 부위"
+            return "섹시한 부위"
         case "veryUgly":
-            return "씹하타취 부위"
+            return "듬직한 부위"
         default:
             return nil
         }
@@ -38,16 +40,18 @@ extension String {
     
     var toTitleLabel: String? {
         switch self {
-        case "veryHansome", "veryPretty":
-            return "씹상타취"
+        case "veryHansome":
+            return "잘생긴 스타일"
+        case "veryPretty":
+            return "예쁜 스타일"
         case "hansome", "pretty":
-            return "상타취"
+            return "귀여운 스타일"
         case "normal":
-            return "평타취"
+            return "지적인 스타일"
         case "ugly":
-            return "하타취"
+            return "섹시한 스타일"
         case "veryUgly":
-            return "씹하타취"
+            return "듬직한 스타일"
         default:
             return nil
         }

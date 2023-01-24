@@ -19,16 +19,11 @@ struct SettingsView: View {
             Spacer().frame(height: 16)
             
             HStack {
-                if language.language == .korean {
-                    Text("인공지능 얼굴평가")
-                        .font(.system(size: 20, weight: .black))
-                        .foregroundColor(titleColor)
-                    + Text("가 뭔가요?")
-                        .font(.system(size: 20, weight: .black))
-                } else {
-                    Text(language.settingsTitle)
-                        .font(.system(size: 20, weight: .black))
-                }
+                Text("인공지능 얼굴분석")
+                    .font(.system(size: 20, weight: .black))
+                    .foregroundColor(titleColor)
+                + Text("이 뭔가요?")
+                    .font(.system(size: 20, weight: .black))
                 
                 Spacer()
             }
@@ -42,8 +37,6 @@ struct SettingsView: View {
             
             AIDescriptionView()
                 .padding(.bottom, 40)
-            
-            LanguageView()
             
             Spacer()
         }

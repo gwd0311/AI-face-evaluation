@@ -70,22 +70,13 @@ struct MainPage: View {
                 .toolbar {
                     ToolbarItem(placement: .navigationBarLeading) {
                         HStack(spacing: 5) {
-                            if language.language == .japanese || language.language == .chinese {
-                                Text(language.ai)
-                                    .foregroundColor(.black)
-                                    .font(.system(size: 20, weight: .black))
-                                Text(language.facetest)
-                                    .font(.system(size: 20, weight: .black))
-                                    .foregroundColor(logoColor)
-                            } else {
-                                StrokeTextView(text: language.ai, width: 1, color: logoColor)
-                                    .foregroundColor(.white)
-                                    .font(.custom("JalnanOTF", size: 20))
-                                Text(language.facetest)
-                                    .font(.custom("JalnanOTF", size: 20))
-                                    .foregroundColor(logoColor)
-                                    .fontWeight(.black)
-                            }
+                            StrokeTextView(text: language.ai, width: 1, color: logoColor)
+                                .foregroundColor(.white)
+                                .font(.custom("JalnanOTF", size: 20))
+                            Text(language.facetest)
+                                .font(.custom("JalnanOTF", size: 20))
+                                .foregroundColor(logoColor)
+                                .fontWeight(.black)
                         }
                         .padding(.top, 5)
                     }

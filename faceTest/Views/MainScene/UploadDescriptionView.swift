@@ -28,26 +28,6 @@ struct UploadDescriptionView: View {
                 .font(.system(size: 14))
                 .fontWeight(.black)
                 .foregroundColor(Color(uiColor: .darkGray))
-        case .english:
-            return Text(language.mainBottomScript)
-                .font(.system(size: 14))
-                .foregroundColor(.gray)
-        case .japanese:
-            return Text(language.mainBottomScript)
-                .font(.system(size: 14))
-                .foregroundColor(.gray)
-        case .chinese:
-            return Text(language.mainBottomScript)
-                .font(.system(size: 14))
-                .foregroundColor(.gray)
-        case .vietnamese:
-            return Text(language.mainBottomScript)
-                .font(.system(size: 14))
-                .foregroundColor(.gray)
-        case .Indonesian:
-            return Text(language.mainBottomScript)
-                .font(.system(size: 14))
-                .foregroundColor(.gray)
         }
         
     }
