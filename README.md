@@ -15,7 +15,7 @@
 - CreateML로 만든 mlmodel 파일이 coreML 인스턴스를 가져오는 방법으로 가져올 수 없어 많이 헤맸습니다.
 
 ### 해결
-- Vision Framework를 학습하여 createML로 만든 모델을 인스턴스로 가져올 수 있는 방법을 찾을 수 있었습니다.
+- 해외 자료를 뒤지던 끝에 Vision Framework를 학습하여 createML로 만든 모델을 인스턴스로 가져올 수 있는 방법을 찾을 수 있었습니다.
 - 거기에 추가적으로 응용하여 사람 얼굴만 인식할 수 있도록 VNDetectFaceRectanglesRequest를 학습하여 FaceDetector를 만들고 적용하였습니다.
 
 # 프로젝트를 하며 느낀점 + 개선해나가야 할 부분
