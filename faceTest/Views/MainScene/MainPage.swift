@@ -39,8 +39,6 @@ struct MainPage: View {
 
                     Spacer()
                     
-                    BannerAdView()
-
                     UploadDescriptionView()
                     
                     Spacer().frame(height: 16)

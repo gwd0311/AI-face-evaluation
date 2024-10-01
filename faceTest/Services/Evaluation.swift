@@ -19,7 +19,6 @@ class Evaluation: ObservableObject {
     @Published var results: [Analysis] = []
     
     var languageManager = LanguageManager()
-    var interstitalAd = InterstitialAd()
     
     var resultMessage: String {
         switch languageManager.language {

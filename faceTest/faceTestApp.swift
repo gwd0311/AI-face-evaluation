@@ -7,7 +7,6 @@
 
 import SwiftUI
 import AppTrackingTransparency
-import GoogleMobileAds
 import AdSupport
 
 @main
@@ -52,7 +51,6 @@ struct faceTestApp: App {
             ATTrackingManager.requestTrackingAuthorization { status in
                 //Whether or not user has opted in initialize GADMobileAds here it will handle the rest
                 print(ASIdentifierManager.shared().advertisingIdentifier.uuidString)
-                GADMobileAds.sharedInstance().start()
             }
         }
     }
@@ -64,7 +62,6 @@ struct faceTestApp: App {
             ContentView()
                 .environmentObject(model)
                 .environmentObject(model.languageManager)
-                .environmentObject(model.interstitalAd)
         }
     }
 }

@@ -7,7 +7,6 @@
 
 import SwiftUI
 import ScreenshotSwiftUI
-import GoogleMobileAds
 
 struct ResultView: View {
     
@@ -17,7 +16,8 @@ struct ResultView: View {
     @State private var alertMessage = ""
     @EnvironmentObject private var model: Evaluation
     @EnvironmentObject private var language: LanguageManager
-    @EnvironmentObject private var ad: InterstitialAd
+    @Environment(\.dismiss) var dismiss
+    
     
     let logoColor = Color(uiColor: UIColor(red: 0.238, green: 0.241, blue: 0.258, alpha: 1))
     
@@ -66,7 +66,7 @@ struct ResultView: View {
                             Spacer()
                             HStack {
                                 Button {
-                                    ad.showAd()
+                                    dismiss()
                                 } label: {
                                     Text(language.anotherImage)
                                         .fontWeight(.black)
@@ -151,10 +151,8 @@ struct ResultView: View {
             Text(alertMessage)
         }
         .onWillDisappear {
-            if ad.isDismiss {
-                model.isLoading = false
-                model.initializeAll()
-            }
+            model.isLoading = false
+            model.initializeAll()
         }
     }
 }
@@ -164,7 +162,6 @@ struct ResultView_Previews: PreviewProvider {
         ResultView()
             .environmentObject(Evaluation())
             .environmentObject(LanguageManager())
-            .environmentObject(InterstitialAd())
     }
 }
 

@@ -42,9 +42,6 @@
 		B3F1766029641FB900CD2822 /* MainButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F1765F29641FB900CD2822 /* MainButtonStyle.swift */; };
 		B3FA9D3529671DA500E565A2 /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FA9D3429671DA500E565A2 /* LanguageManager.swift */; };
 		B3FA9D532968052300E565A2 /* ResultMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FA9D522968052300E565A2 /* ResultMessageView.swift */; };
-		B3FA9D562968241300E565A2 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = B3FA9D552968241300E565A2 /* GoogleMobileAds */; };
-		B3FA9D60296859AF00E565A2 /* BannerAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FA9D5F296859AF00E565A2 /* BannerAdView.swift */; };
-		B3FA9D6229685B1E00E565A2 /* InterstitialAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FA9D6129685B1E00E565A2 /* InterstitialAd.swift */; };
 		B3FA9D6D29687B2E00E565A2 /* splash.json in Resources */ = {isa = PBXBuildFile; fileRef = B3FA9D6C29687B2E00E565A2 /* splash.json */; };
 		B3FA9D6F296C2F2800E565A2 /* UIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FA9D6E296C2F2800E565A2 /* UIApplication+.swift */; };
 		B3FA9D71296C47FC00E565A2 /* WillDisappearHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FA9D70296C47FC00E565A2 /* WillDisappearHandler.swift */; };
@@ -85,8 +82,6 @@
 		B3F1765F29641FB900CD2822 /* MainButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButtonStyle.swift; sourceTree = "<group>"; };
 		B3FA9D3429671DA500E565A2 /* LanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
 		B3FA9D522968052300E565A2 /* ResultMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultMessageView.swift; sourceTree = "<group>"; };
-		B3FA9D5F296859AF00E565A2 /* BannerAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerAdView.swift; sourceTree = "<group>"; };
-		B3FA9D6129685B1E00E565A2 /* InterstitialAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialAd.swift; sourceTree = "<group>"; };
 		B3FA9D6529686AE000E565A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B3FA9D6C29687B2E00E565A2 /* splash.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = splash.json; sourceTree = "<group>"; };
 		B3FA9D6E296C2F2800E565A2 /* UIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+.swift"; sourceTree = "<group>"; };
@@ -98,7 +93,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3FA9D562968241300E565A2 /* GoogleMobileAds in Frameworks */,
 				B3B4A38F2966ACBE00F797F7 /* ScreenshotSwiftUI in Frameworks */,
 				B3B4A35B296474C500F797F7 /* Lottie in Frameworks */,
 			);
@@ -157,7 +151,6 @@
 		B347D3EA2963D3AA00196FC5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B3FA9D57296827B300E565A2 /* AdView */,
 				B3B4A37E29659ADB00F797F7 /* SplashScene */,
 				B3B4A368296570A100F797F7 /* SettingScene */,
 				B3B4A360296526DE00F797F7 /* ResultScene */,
@@ -192,7 +185,6 @@
 			children = (
 				B3B4A34F29645E4C00F797F7 /* Evaluation.swift */,
 				B3FA9D3429671DA500E565A2 /* LanguageManager.swift */,
-				B3FA9D6129685B1E00E565A2 /* InterstitialAd.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -265,14 +257,6 @@
 			path = SplashScene;
 			sourceTree = "<group>";
 		};
-		B3FA9D57296827B300E565A2 /* AdView */ = {
-			isa = PBXGroup;
-			children = (
-				B3FA9D5F296859AF00E565A2 /* BannerAdView.swift */,
-			);
-			path = AdView;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -292,7 +276,6 @@
 			packageProductDependencies = (
 				B3B4A35A296474C500F797F7 /* Lottie */,
 				B3B4A38E2966ACBE00F797F7 /* ScreenshotSwiftUI */,
-				B3FA9D552968241300E565A2 /* GoogleMobileAds */,
 			);
 			productName = faceTest;
 			productReference = B347D3C62962A01D00196FC5 /* faceTest.app */;
@@ -325,7 +308,6 @@
 			packageReferences = (
 				B3B4A359296474C500F797F7 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				B3B4A38D2966ACBE00F797F7 /* XCRemoteSwiftPackageReference "ScreenshotSwiftUI" */,
-				B3FA9D542968241300E565A2 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
 			);
 			productRefGroup = B347D3C72962A01D00196FC5 /* Products */;
 			projectDirPath = "";
@@ -377,10 +359,8 @@
 				B347D3F02963DFCC00196FC5 /* GenderPickerView.swift in Sources */,
 				B3B4A35029645E4C00F797F7 /* Evaluation.swift in Sources */,
 				B347D3EC2963D3BF00196FC5 /* ImagePickerView.swift in Sources */,
-				B3FA9D60296859AF00E565A2 /* BannerAdView.swift in Sources */,
 				B3B4A38029659AEB00F797F7 /* SplashView.swift in Sources */,
 				B347D3CA2962A01D00196FC5 /* faceTestApp.swift in Sources */,
-				B3FA9D6229685B1E00E565A2 /* InterstitialAd.swift in Sources */,
 				B3FA9D6F296C2F2800E565A2 /* UIApplication+.swift in Sources */,
 				B347D3E32962CBDB00196FC5 /* VisionClassifier.swift in Sources */,
 				B3FA9D3529671DA500E565A2 /* LanguageManager.swift in Sources */,
@@ -627,14 +607,6 @@
 				minimumVersion = 0.3.0;
 			};
 		};
-		B3FA9D542968241300E565A2 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 9.0.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -647,11 +619,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B3B4A38D2966ACBE00F797F7 /* XCRemoteSwiftPackageReference "ScreenshotSwiftUI" */;
 			productName = ScreenshotSwiftUI;
-		};
-		B3FA9D552968241300E565A2 /* GoogleMobileAds */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B3FA9D542968241300E565A2 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
-			productName = GoogleMobileAds;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
